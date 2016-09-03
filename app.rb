@@ -1,14 +1,18 @@
 # 07 - Files & Redirects
 require 'sinatra'
 
+# images = ['morty.jpg', 'rick.jpg']
+# placeholders = images.sample
 
 get '/' do
-   erb :index
+  erb :index
 end
 
 get '/placeholder' do
+  images = ['morty.jpg', 'rick.jpg']
+  placeholders = images.sample
 
-  placeholders = ['morty.jpg', 'rick.jpg']
-  return placeholders.sample
-
+  erb :placeholder, :locals => {
+    :placeholders => placeholders
+}
 end
