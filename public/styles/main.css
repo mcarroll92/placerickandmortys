@@ -54,7 +54,7 @@ header h1 {
 .main-content {
 	width: 400px;
 	padding-right: 8px;
-	height: 565px;
+	height: 585px;
 	display: flex;
 	flex-flow: column wrap;
 }
