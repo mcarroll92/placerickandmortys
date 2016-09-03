@@ -25,14 +25,13 @@ get '/placeholder/?:width?/?:height?' do
   end
 end
 
-# get '/placeholder/:width/:height' do |w, h|
-#   width = "#{w}"
-#   height = "#{h}"
+#  Basic placeholder section - pulls a random image with no resizing. 
 #
+# get '/placeholder' do
+#   images = ['morty.jpg', 'rick.jpg', 'rickandmorty.png', 'rickandmorty2.png', 'rickandmorty3.jpg']
+#   placeholders = images.sample
 #
-#   erb :placeholder_resize, :locals => {
-#     :width => width
-#     :height => height
-# }
-#
+#   erb :placeholder, :locals => {
+#     :placeholders => placeholders
+#   }
 # end
