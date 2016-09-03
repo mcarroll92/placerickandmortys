@@ -9,21 +9,20 @@ get '/' do
 end
 
 
-get '/placeholder/?:width?/?:height?' do
+get '/placeholder/?:width?/?:height?' do |w, h|
   images = ['morty.jpg', 'rick.jpg', 'rickandmorty.png', 'rickandmorty2.png', 'rickandmorty3.jpg']
   placeholders = images.sample
-  width = ['width']
-  height = ['height']
+  width = "#{w}"
+  height = "#{h}"
 
-  if params['width']['height']
-
-    erb :placeholder, :locals => {
+  if params['width']
+    
+    erb :placeholder_resize, :locals => {
       :placeholders => placeholders,
       :width => width,
       :height => height
       }
 
-  else
     erb :placeholder, :locals => {
       :placeholders => placeholders
     }
