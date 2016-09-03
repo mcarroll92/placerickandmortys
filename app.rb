@@ -1,8 +1,5 @@
-# 07 - Files & Redirects
 require 'sinatra'
 
-# images = ['morty.jpg', 'rick.jpg']
-# placeholders = images.sample
 
 get '/' do
   erb :index
@@ -16,12 +13,11 @@ get '/placeholder/?:width?/?:height?' do |w, h|
   height = "#{h}"
 
   if params['width']
-    
     erb :placeholder_resize, :locals => {
       :placeholders => placeholders,
       :width => width,
       :height => height
-      }
+    }
 
     erb :placeholder, :locals => {
       :placeholders => placeholders
