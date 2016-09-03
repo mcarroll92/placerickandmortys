@@ -1,3 +1,18 @@
+/* @group Units */
+.unit:after, .group:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.unit, .group { display: inline-block; }
+* html .unit, * html .group { height: 1%; }
+.unit, .group { display: block; }
+/* @end */
+
+/* @group Skiplinks */
+#skip-links {
+	/* Hide, but not from screen-readers */
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
 body {
 	background: #F9F9F9;
 	color: #42413b;
@@ -54,7 +69,7 @@ header h1 {
 .main-content {
 	width: 400px;
 	padding-right: 8px;
-	height: 585px;
+	height: 681px;
 	display: flex;
 	flex-flow: column wrap;
 }
@@ -62,12 +77,6 @@ header h1 {
 .description {
 	color: #222;
 	margin-bottom: 30px;
-}
-
-.more-ricks-and-mortys {
-	width: 408px;
-	margin-left: 8px;
-	margin-bottom: 8px;
 }
 
 .links {
@@ -86,26 +95,50 @@ header h1 {
 	-webkit-transition: color 0.2s linear;
 }
 
-.mortys-content a:hover {
+#more-ricks-and-mortys {
+	width: 408px;
+	float:right;
+	margin: 100px 0 0 8px;
+
+}
+
+#mortys-content a:hover {
 	color: #FFF;
 }
 
-.more-ricks-and-mortys {
-	width: 408px;
+.image-1,.image-2,.image-3 {
+	float: left;
+}
+
+.image-1 {
+	margin-right: 8px;
+}
+
+.image-4,.image-5,.image-6,.image-7 {
 	float: right;
+}
+
+.image-4 {
 	margin-left: 8px;
+}
+
+.image-5 {
+	margin-left: 8px;
+}
+
+.image-1,.image-2,.image-3 .image-5,.image-6,.image-7 {
 	margin-bottom: 8px;
 }
 
 
-.more-ricks-and-mortys img {
-	margin-bottom: 8px;
-}
+
+
+
 
 .footer {
 	font-size: 85.714%; /* 12px */
 	clear: both;
-	margin-top: 16px;
+	margin-top: 8px;
 	border-top: 1px solid #D6D6D6;
 	padding: 12px 0;
 }
