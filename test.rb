@@ -13,6 +13,7 @@ Dragonfly.app.configure do
   plugin :imagemagick
 end
 
+
 image = ['1U4LYmp.jpg']
 
-image.thumb('400x300+50+100')
+image.thumb('500x500#')
