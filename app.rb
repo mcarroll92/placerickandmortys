@@ -6,9 +6,10 @@ get '/' do
 end
 
 
-get '/placeholder/?:width?/?:height?' do
+get '/placeholder/?:width?/?:height?' do |w, h|
   images = Dir.entries("public/images")
   placeholders = images.sample
+
 
   if params['width']
     erb :placeholder_resize, :locals => {
