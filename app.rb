@@ -14,6 +14,7 @@ end
 
 get '/placeholder?/?' do
   images = Dir.entries("public/images")
+  # Temporary loop to delete ./ and ../ from array whilst I build helper module 
     2.times do
       images.delete_at(0)
     end
