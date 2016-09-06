@@ -14,17 +14,32 @@ end
 
 get '/placeholder?/?' do
   images = Dir.entries("public/images")
+    2.times do
+      images.delete_at(0)
+    end
   placeholders = images.sample
+
 
   erb :placeholder, :locals => {
     :placeholders => placeholders
   }
 end
 
-get '/:image/?:width?/?:height?' do |i, w, h|
+# get '/placeholder/:width?/?' do
+#   redirect '/placeholder/?:width?/?:height?', 301
+# end
+
+get '/placeholder/?:width?/?:height?' do |w, h|
   images = Dir.entries("public/images")
-  placeholders = images[i.to_i]
+    3.times do
+      images.delete_at(0)
+    end
+  placeholders = images.sample
   path = 'public/images/' + placeholders
   dim = w + 'x' + h + '#'
   Dragonfly.app.fetch_file(path).thumb(dim).to_response(env)
+
+  # erb :placeholder, :locals => {
+  #   :placeholders => placeholders
+  # }
   end
